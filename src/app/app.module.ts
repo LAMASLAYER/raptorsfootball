@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { CountDown } from 'ng4-date-countdown-timer';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    CountDown
   ],
   imports: [
     BrowserModule,
