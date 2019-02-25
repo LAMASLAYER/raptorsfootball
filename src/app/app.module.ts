@@ -4,10 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
+import { CountdownTimerModule } from 'ngx-countdown-timer';
 import { NavbarComponent } from './navbar/navbar.component';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { CountDown } from 'ng4-date-countdown-timer';
-
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,16 +16,14 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent,
-    CountDown
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    CountdownTimerModule.forRoot()
   ],
-  providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
-  ],
-  bootstrap: [AppComponent],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
