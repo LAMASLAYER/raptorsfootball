@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
-import {CountDown} from 'ng2-date-countdown';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
@@ -28,8 +27,5 @@ const routes: Routes = [
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent],
-  exports: [
-    CountDown
-  ]
 })
 export class AppModule { }
