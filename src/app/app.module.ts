@@ -18,7 +18,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    CountDown,
     NavbarComponent
   ],
   imports: [
@@ -28,6 +27,9 @@ const routes: Routes = [
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    CountDown
+  ]
 })
 export class AppModule { }
