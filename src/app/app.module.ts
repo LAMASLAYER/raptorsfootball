@@ -6,17 +6,20 @@ import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import { CountdownTimerModule } from 'ngx-countdown-timer';
 import { NavbarComponent } from './navbar/navbar.component';
+import { JoinUsComponent } from './join-us/join-us.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'join', component: JoinUsComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    JoinUsComponent
   ],
   imports: [
     BrowserModule,

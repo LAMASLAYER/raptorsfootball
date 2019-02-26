@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  private _home: boolean;
+  private _join: boolean;
+  private router: Router;
+
+  get home(): boolean {
+    return this._home;
+  }
+
+  set home(value: boolean) {
+    this._home = value;
+  }
+
+  get join(): boolean {
+    return this._join;
+  }
+
+  set join(value: boolean) {
+    this._join = value;
+  }
+
+  public goHome() {
+    this.router.navigate(['home']);
+  }
+
+  public goJoin() {
+    this.router.navigate(['join']);
+  }
+
+  constructor(router: Router) {
+    this.router = router;
+  }
 
   ngOnInit() {
+    if (window.location.pathname === '/home') {
+      this.home = true;
+    } else if (window.location.pathname === '/join') {
+      this.join = true;
+    }
+    console.log(window.location.pathname);
   }
 
 }
