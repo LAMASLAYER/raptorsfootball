@@ -11,6 +11,16 @@ export class NavbarComponent implements OnInit {
   private _home: boolean;
   private _join: boolean;
   private router: Router;
+  private _schedule: boolean;
+
+
+  get schedule(): boolean {
+    return this._schedule;
+  }
+
+  set schedule(value: boolean) {
+    this._schedule = value;
+  }
 
   get home(): boolean {
     return this._home;
@@ -36,17 +46,22 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['join']);
   }
 
+  public goSchedule() {
+    this.router.navigate(['schedule']);
+  }
+
   constructor(router: Router) {
     this.router = router;
   }
 
   ngOnInit() {
-    if (window.location.pathname === '/home') {
+    if (window.location.pathname === ('/home' || '/')) {
       this.home = true;
     } else if (window.location.pathname === '/join') {
       this.join = true;
+    } else if (window.location.pathname === '/schedule') {
+      this.schedule = true;
     }
-    console.log(window.location.pathname);
   }
 
 }

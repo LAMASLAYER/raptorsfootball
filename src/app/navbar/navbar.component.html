@@ -6,12 +6,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a style="cursor: pointer" class="nav-link" (click)="home=true;join=false;goHome()" [class.active]="home">Home</a>
+        <a style="cursor: pointer" class="nav-link" (click)="home=true;join=false;schedule=false;goHome()" [class.active]="home">Home</a>
       </li>
       <li class="nav-item">
-        <a style="cursor: pointer" class="nav-link" (click)="home=false;join=true;goJoin()" [class.active]="join">Join Us</a>
+        <a style="cursor: pointer" class="nav-link" (click)="home=false;join=true;schedule=false;goJoin()" [class.active]="join">Join Us</a>
       </li>
-      <li> </li>
+      <li><a style="cursor: pointer" class="nav-link" (click)="home=false;join=false;schedule=true;goSchedule()" [class.active]="schedule">Schedule And Results</a>
+      </li>
       <li><a href="https://www.facebook.com/SoumagneRaptors/"><i style="margin-top: 12px" class="fab fa-facebook"></i></a></li>
     </ul>
   </div>
